@@ -3,15 +3,14 @@ const loginForm = document.querySelector('.login-form');
 loginForm.addEventListener('submit', event => {
     event.preventDefault();
 
-    const emailInput = event.currentTarget.elements.email;
-    const passwordInput = event.currentTarget.elements.password;
+    const {email, password} = event.currentTarget.elements;
 
-    if (emailInput.value === '' || passwordInput.value === "") {
+    if (email.value === '' || password.value === '') {
         alert('Всі поля повинні бути заповнені!');
     } else {
         const user = {
-            email: emailInput.value,
-            password: passwordInput.value
+            email: email.value,
+            password: password.value
         }
         console.log(user);
         event.currentTarget.reset();
